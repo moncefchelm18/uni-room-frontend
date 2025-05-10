@@ -8,7 +8,11 @@ import {
   Settings,
   User,
   Users,
+  UserCheck,
   Contact,
+  Bed,
+  ClipboardList,
+  Building2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -24,14 +28,14 @@ function DashboardNav({ role }) {
       icon: Home,
     },
     {
-      title: "Room Info",
-      href: "/dashboard/student/room",
+      title: "Residencies",
+      href: "/dashboard/student/residencies",
       icon: Building,
     },
     {
-      title: "Contact Us",
-      href: "/dashboard/student/contact",
-      icon: Settings,
+      title: "Room Request",
+      href: "/dashboard/student/request",
+      icon: Bed,
     },
     {
       title: "Profile",
@@ -47,20 +51,25 @@ function DashboardNav({ role }) {
       icon: Home,
     },
     {
-      title: "Students",
-      href: "/dashboard/admin/students",
-      icon: Users,
+      title: "User Approvals",
+      href: "/dashboard/admin/user-approvals",
+      icon: UserCheck,
     },
-    {
-      title: "Contact",
-      href: "/dashboard/admin/requests",
-      icon: Contact,
-    },
-    {
-      title: "Site Maintenance",
-      href: "/dashboard/admin/site-maintenance",
-      icon: Settings,
-    },
+    // {
+    //   title: "Students",
+    //   href: "/dashboard/admin/students",
+    //   icon: Users,
+    // },
+    // {
+    //   title: "Contact",
+    //   href: "/dashboard/admin/requests",
+    //   icon: Contact,
+    // },
+    // {
+    //   title: "Site Maintenance",
+    //   href: "/dashboard/admin/site-maintenance",
+    //   icon: Settings,
+    // },
   ];
 
   const housingItems = [
@@ -70,15 +79,26 @@ function DashboardNav({ role }) {
       icon: Home,
     },
     {
-      title: "Room Requests",
-      href: "/dashboard/service/requests",
-      icon: Building,
+      title: "Manage Residencies",
+      href: "/dashboard/service/residencies",
+      icon: Building2,
     },
     {
-      title: "Student Management",
-      href: "/dashboard/service/students",
-      icon: Users,
+      title: "Booking Requests",
+      href: "/dashboard/service/booking-requests",
+      icon: ClipboardList,
     },
+
+    // {
+    //   title: "Room Requests",
+    //   href: "/dashboard/service/requests",
+    //   icon: Building,
+    // },
+    // {
+    //   title: "Student Management",
+    //   href: "/dashboard/service/students",
+    //   icon: Users,
+    // },
   ];
 
   const items =

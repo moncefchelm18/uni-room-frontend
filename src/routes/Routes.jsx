@@ -15,6 +15,12 @@ import HousingRequests from "../pages/service/HousingRequests";
 import HousingStudents from "../pages/service/HousingStudents";
 import AdminSiteMaintenance from "@/pages/admin/AdminSiteMaintenance";
 import StudentRoomInfos from "@/pages/student/StudentRoomInfos";
+import StudentResidencies from "@/pages/student/StudentResidencies";
+import StudentResidencyDetail from "@/pages/student/StudentResidencyDetail";
+import StudentRoomRequest from "@/pages/student/StudentRoomRequest";
+import AdminUserApprovals from "@/pages/admin/AdminUserApprovals";
+import ServiceManageResidency from "@/pages/service/ServiceManageResidency";
+import ServiceBookingRequests from "@/pages/service/ServiceBookingRequests";
 
 /**
  * Application routes configuration
@@ -33,11 +39,17 @@ function AppRoutes() {
         {/* Student Routes */}
         <Route path="student" element={<StudentDashboard />} />
         <Route path="student/profile" element={<StudentProfile />} />
-        <Route path="student/room" element={<StudentRoomInfos />} />
-        <Route path="student/contact" element={<StudentContact />} />
+        <Route path="student/residencies" element={<StudentResidencies />} />
+        <Route
+          path="student/residencies/:residencyId"
+          element={<StudentResidencyDetail />}
+        />
+        <Route path="student/request" element={<StudentRoomRequest />} />
+        {/* <Route path="student/contact" element={<StudentContact />} /> */}
 
         {/* Admin Routes */}
         <Route path="admin" element={<AdminDashboard />} />
+        <Route path="admin/user-approvals" element={<AdminUserApprovals />} />
         <Route path="admin/students" element={<AdminStudents />} />
         <Route path="admin/requests" element={<AdminContactMessages />} />
         <Route
@@ -47,8 +59,16 @@ function AppRoutes() {
 
         {/* Housing Manager Routes */}
         <Route path="service" element={<HousingDashboard />} />
-        <Route path="service/requests" element={<HousingRequests />} />
-        <Route path="service/students" element={<HousingStudents />} />
+        <Route
+          path="service/residencies"
+          element={<ServiceManageResidency />}
+        />
+        <Route
+          path="service/booking-requests"
+          element={<ServiceBookingRequests />}
+        />
+        {/* <Route path="service/requests" element={<HousingRequests />} /> */}
+        {/* <Route path="service/students" element={<HousingStudents />} /> */}
 
         {/* Default redirect based on role */}
         <Route index element={<Navigate to="/dashboard/student" replace />} />
